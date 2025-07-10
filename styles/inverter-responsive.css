@@ -1,0 +1,229 @@
+/* Responsive Inverter Controller Styles */
+
+/* Base inverter controller styles */
+[data-node-id="inverter"] {
+  /* Smooth transitions for responsive changes */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Ensure proper containment */
+  contain: layout style paint;
+
+  /* Optimize for performance */
+  will-change: transform, width, height;
+
+  /* Prevent overflow beyond container boundaries */
+  overflow: hidden;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Responsive scaling optimizations */
+@media (max-width: 319px) {
+  /* 1st generation extra small phones */
+  [data-node-id="inverter"] {
+    /* Ultra-compact sizing for very small screens */
+    min-width: 140px !important;
+    min-height: 200px !important;
+    /* Ensure content remains accessible */
+    font-size: 0.75rem;
+  }
+
+  [data-node-id="inverter"] .inverter-button {
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 0.7rem;
+  }
+
+  [data-node-id="inverter"] .inverter-display {
+    padding: 2px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 474px) {
+  /* Extra small phones (320px - 474px) */
+  [data-node-id="inverter"] {
+    /* Compact sizing for small screens */
+    min-width: 160px !important;
+    min-height: 240px !important;
+  }
+
+  [data-node-id="inverter"] .inverter-button {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (min-width: 475px) and (max-width: 639px) {
+  /* Small phones */
+  [data-node-id="inverter"] {
+    min-width: 200px !important; /* Restored original */
+    min-height: 300px !important; /* Restored original */
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Large phones / small tablets */
+  [data-node-id="inverter"] {
+    min-width: 250px !important; /* Restored original */
+    min-height: 370px !important; /* Restored original */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablets */
+  [data-node-id="inverter"] {
+    min-width: 300px !important; /* Restored original */
+    min-height: 440px !important; /* Restored original */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Small desktops */
+  [data-node-id="inverter"] {
+    min-width: 350px !important; /* Restored original */
+    min-height: 510px !important; /* Restored original */
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Large desktops */
+  [data-node-id="inverter"] {
+    min-width: 400px !important; /* Restored original */
+    min-height: 580px !important; /* Restored original */
+  }
+}
+
+/* Breakpoint-specific optimizations */
+[data-node-id="inverter"][data-breakpoint="xs"] {
+  /* Extra small optimizations */
+  --inverter-font-scale: 0.8;
+  --inverter-padding-scale: 0.7;
+}
+
+[data-node-id="inverter"][data-breakpoint="sm"] {
+  /* Small optimizations */
+  --inverter-font-scale: 0.9;
+  --inverter-padding-scale: 0.8;
+}
+
+[data-node-id="inverter"][data-breakpoint="md"] {
+  /* Medium optimizations */
+  --inverter-font-scale: 1.0;
+  --inverter-padding-scale: 0.9;
+}
+
+[data-node-id="inverter"][data-breakpoint="lg"] {
+  /* Large optimizations */
+  --inverter-font-scale: 1.1;
+  --inverter-padding-scale: 1.0;
+}
+
+[data-node-id="inverter"][data-breakpoint="xl"],
+[data-node-id="inverter"][data-breakpoint="2xl"] {
+  /* Extra large optimizations */
+  --inverter-font-scale: 1.2;
+  --inverter-padding-scale: 1.1;
+}
+
+/* Performance optimizations */
+[data-node-id="inverter"] * {
+  /* Optimize text rendering */
+  text-rendering: optimizeSpeed;
+  
+  /* Optimize animations */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove conflicting hover effects - handled by motion components */
+[data-node-id="inverter"]:hover {
+  /* No transform needed - handled by Framer Motion */
+}
+
+@media (max-width: 767px) {
+  /* Disable hover effects on mobile for better performance */
+  [data-node-id="inverter"]:hover {
+    /* No transform needed */
+  }
+}
+
+/* Focus states for accessibility */
+[data-node-id="inverter"]:focus-within {
+  outline: 2px solid #3dd56d;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [data-node-id="inverter"] {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  [data-node-id="inverter"],
+  [data-node-id="inverter"] * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  [data-node-id="inverter"] {
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  [data-node-id="inverter"] {
+    /* Enhance contrast in dark mode */
+    filter: contrast(1.1) brightness(1.05);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+  [data-node-id="inverter"] {
+    /* Reduce height in landscape mode on small screens */
+    max-height: 80vh !important;
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-aspect-ratio: 21/9) {
+  [data-node-id="inverter"] {
+    /* Prevent over-scaling on ultra-wide screens */
+    max-width: 500px !important; /* Restored original */
+    max-height: 700px !important; /* Restored original */
+  }
+}
+
+/* Page2 specific containment rules */
+.page2-inverter-container [data-node-id="inverter"] {
+  /* Absolute containment within page2 sections */
+  position: relative !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+
+  /* Ensure it never exceeds container bounds */
+  box-sizing: border-box;
+  contain: strict;
+}
+
+.page2-inverter-container [data-node-id="inverter"] > * {
+  /* Ensure all child elements also respect boundaries */
+  max-width: 100% !important;
+  max-height: 100% !important;
+  overflow: hidden !important;
+}
