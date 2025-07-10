@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-
     "dev": "next dev",
     "build": "next build",
     "build:production": "cross-env NODE_ENV=production next build",
@@ -73,8 +72,8 @@
     "typescript-eslint": "^8.34.0"
   },
   "engines": {
-    "node": ">=18.20.4",
-    "npm": ">=9.0.0"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "overrides": {
     "react": "^18.3.1",
@@ -85,5 +84,6 @@
   "resolutions": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "packageManager": "npm@9.9.0"
 }
